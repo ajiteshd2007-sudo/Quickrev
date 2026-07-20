@@ -23,16 +23,26 @@ export default function FriendTopics() {
     <div className="container">
       <h2 style={{ marginTop: 32 }}>{friend.name}'s Topics</h2>
       <p className="section-sub" style={{ textAlign: 'left', margin: '0 0 24px' }}>
-        @{friend.username} · headings shared with friends
+        @{friend.username} · topics shared with you as a friend
       </p>
 
       <div className="topic-list" style={{ marginBottom: 60 }}>
-        {topics.map((t, i) => (
-          <div className="topic-item" key={i}>
+        {topics.map((t) => (
+          <div className="topic-item" key={t.topic_id}>
             <div>
               <h3>{t.heading}</h3>
-              <div className="meta">{t.subject ? `${t.subject} · ` : ''}{t.card_count} flashcards</div>
+              <div className="meta">
+                {t.subject ? `${t.subject} · ` : ''}
+                {t.card_count} {t.card_count === 1 ? 'flashcard' : 'flashcards'}
+              </div>
             </div>
+            <Link
+              to={`/friends/${id}/topics/${t.topic_id}`}
+              className="btn btn-primary"
+              style={{ whiteSpace: 'nowrap' }}
+            >
+              Study Flashcards
+            </Link>
           </div>
         ))}
         {topics.length === 0 && <p style={{ color: 'var(--muted)' }}>This friend hasn't added any topics yet.</p>}
@@ -41,3 +51,4 @@ export default function FriendTopics() {
     </div>
   );
 }
+

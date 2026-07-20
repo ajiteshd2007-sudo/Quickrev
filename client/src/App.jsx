@@ -13,6 +13,7 @@ import Topics from './pages/Topics.jsx';
 import TopicDetail from './pages/TopicDetail.jsx';
 import Friends from './pages/Friends.jsx';
 import FriendTopics from './pages/FriendTopics.jsx';
+import FriendFlashcards from './pages/FriendFlashcards.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/topics/:id" element={<RequireAuth><TopicDetail /></RequireAuth>} />
           <Route path="/friends" element={<RequireAuth><Friends /></RequireAuth>} />
           <Route path="/friends/:id" element={<RequireAuth><FriendTopics /></RequireAuth>} />
+          <Route path="/friends/:id/topics/:topicId" element={<RequireAuth><FriendFlashcards /></RequireAuth>} />
         </Routes>
       </main>
       <Footer />

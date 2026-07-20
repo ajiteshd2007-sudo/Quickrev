@@ -49,7 +49,7 @@ router.get('/:id/topics', async (req, res) => {
     if (!link) return res.status(403).json({ error: 'Not friends with this user.' });
 
     const [topics] = await pool.query(
-        `SELECT t.heading, t.subject, COUNT(f.card_id) AS card_count
+        `SELECT t.topic_id, t.heading, t.subject, COUNT(f.card_id) AS card_count
          FROM topics t LEFT JOIN flashcards f ON f.topic_id = t.topic_id
          WHERE t.user_id = ? GROUP BY t.topic_id ORDER BY t.created_at DESC`,
         [friendId]
@@ -58,4 +58,35 @@ router.get('/:id/topics', async (req, res) => {
     res.json({ friend: link, topics });
 });
 
+// GET /api/friends/:id/topics/:topicId/flashcards — view a friend's flashcards for a topic
+router.get('/:id/topics/:topicId/flashcards', async (req, res) => {
+    const friendId = Number(req.params.id);
+    const topicId = Number(req.params.topicId);
+
+    // Verify friendship
+    const [[link]] = await pool.query(
+        `SELECT u.username, u.name FROM friendships fr JOIN users u ON u.user_id = fr.friend_id
+         WHERE fr.user_id = ? AND fr.friend_id = ? AND fr.status = 'accepted'`,
+        [req.userId, friendId]
+    );
+    if (!link) return res.status(403).json({ error: 'Not friends with this user.' });
+
+    // Verify the topic belongs to the friend
+    const [[topic]] = await pool.query(
+        'SELECT topic_id, heading, subject FROM topics WHERE topic_id = ? AND user_id = ?',
+        [topicId, friendId]
+    );
+    if (!topic) return res.status(404).json({ error: 'Topic not found.' });
+
+    const [cards] = await pool.query(
+        `SELECT card_id, question, answer, difficulty, type
+         FROM flashcards WHERE topic_id = ?
+         ORDER BY FIELD(difficulty, 'Easy', 'Medium', 'Hard'), created_at DESC`,
+        [topicId]
+    );
+
+    res.json({ friend: link, topic, cards });
+});
+
 export default router;
+
