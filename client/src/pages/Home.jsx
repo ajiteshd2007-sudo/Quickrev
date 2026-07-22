@@ -15,6 +15,18 @@ export default function Home() {
   return (
     <div className="container">
       <section className="hero">
+        <img
+          src="/logo.png"
+          alt="QuickRev Logo"
+          style={{
+            width: '100px',
+            height: '100px',
+            borderRadius: '20px',
+            marginBottom: '20px',
+            boxShadow: '0 12px 32px rgba(0, 0, 0, 0.4)',
+            border: '1px solid var(--lavender-300)'
+          }}
+        />
         <h1>Turn Your Notes Into<br />Smart Flashcards</h1>
         <p>QuickRev uses AI to generate exam-style questions from your notes, tracks the topics you're weak in, and lets you revise with friends — all in one place.</p>
         <div className="hero-actions">

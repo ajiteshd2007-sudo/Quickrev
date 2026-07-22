@@ -22,7 +22,6 @@ export default function About() {
 
       <section style={{ margin: '48px 0 60px' }}>
         <h2 className="section-title">Project Team</h2>
-        <p className="section-sub">M.Sc. Software Systems · Coimbatore Institute of Technology</p>
         <div className="team-grid">
           {team.map((member) => (
             <div className="team-card" key={member}>

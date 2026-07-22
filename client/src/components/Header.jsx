@@ -14,7 +14,10 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link to="/" className="logo" onClick={close}>Quick<span>Rev</span></Link>
+        <Link to="/" className="logo" onClick={close} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img src="/logo.png" alt="QuickRev Logo" style={{ height: '34px', width: '34px', borderRadius: '8px' }} />
+          <span>Quick</span>Rev
+        </Link>
         <button
           type="button"
           className={`nav-toggle ${navOpen ? 'is-active' : ''}`}

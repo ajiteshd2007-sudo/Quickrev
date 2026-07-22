@@ -46,7 +46,7 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
-// Run database schema migration for new question types
+// Migration: flashcards type column
 try {
     await pool.query(`
         ALTER TABLE flashcards 
@@ -60,6 +60,7 @@ try {
         console.error('Migration failed:', err);
     }
 }
+
 
 const server = app.listen(PORT, () => console.log(`QuickRev API running on http://localhost:${PORT}`));
 

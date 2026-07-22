@@ -139,6 +139,7 @@ quickrev/
 
 ## 🔌 API Reference
 
+<<<<<<< HEAD
 All endpoints (except `/auth/*`) require an `Authorization: Bearer <token>` header.
 
 | Method | Endpoint | Description |
@@ -190,3 +191,8 @@ Full definitions in [`server/database/schema.sql`](server/database/schema.sql).
 ## 📄 License
 
 This project was built for academic purposes as part of a team coursework assignment.
+=======
+Ajitesh D · Sankar S · Aswin Kumar U · Yuvaraj V
+
+📧 quickrev.org@gmail.com · 📞 +91 63838 74330 / +91 87780 34787
+>>>>>>> b39f247 (Added Logo for Quickrev)

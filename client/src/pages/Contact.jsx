@@ -49,12 +49,12 @@ export default function Contact() {
         <div className="panel" style={{ margin: 0 }}>
           <h3>Reach Us Directly</h3>
           <p style={{ color: 'var(--muted)' }}>Project Team · QuickRev</p>
-          <p>📧 <a href="mailto:projectteam672736@gmail.com" style={{ color: 'var(--purple-600)', fontWeight: 700 }}>projectteam672736@gmail.com</a></p>
+          <p>📧 <a href="mailto:quickrev.org@gmail.com" style={{ color: 'var(--purple-600)', fontWeight: 700 }}>quickrev.org@gmail.com</a></p>
           <p>📞 <a href="tel:+916383874330" style={{ color: 'var(--purple-600)', fontWeight: 700 }}>+91 63838 74330</a></p>
           <p>📞 <a href="tel:+918778034787" style={{ color: 'var(--purple-600)', fontWeight: 700 }}>+91 87780 34787</a></p>
           <hr style={{ border: 'none', borderTop: '1px solid var(--lavender-300)', margin: '20px 0' }} />
           <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>Team: Ajitesh D, Sankar S, Aswin Kumar U, Yuvaraj V</p>
-          <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>M.Sc. Software Systems, Coimbatore Institute of Technology</p>
+
         </div>
       </div>
     </div>

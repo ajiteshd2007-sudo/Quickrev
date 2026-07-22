@@ -30,10 +30,7 @@ export default function Login() {
           <label htmlFor="username">Username or Email</label>
           <input type="text" id="username" name="username" value={form.username} onChange={handleChange} required />
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 16, marginBottom: 6 }}>
-            <label htmlFor="password" style={{ margin: 0 }}>Password</label>
-            <Link to="/forgot-password" style={{ fontSize: '0.85rem', color: 'var(--purple-600)', fontWeight: 700 }}>Forgot Password?</Link>
-          </div>
+          <label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" value={form.password} onChange={handleChange} required />
 
           <button type="submit" className="btn btn-primary btn-full" style={{ marginTop: 24 }}>Log In</button>
