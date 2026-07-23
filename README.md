@@ -194,5 +194,5 @@ This project was built for academic purposes as part of a team coursework assign
 =======
 Ajitesh D · Sankar S · Aswin Kumar U · Yuvaraj V
 
-📧 quickrev.org@gmail.com · 📞 +91 63838 74330 / +91 87780 34787
+📧 quickrev.org@gmail.com · 📞 +91 63838 74330 / +91 87780 34787 / +91 8870332120 / +91 6381271196
 >>>>>>> b39f247 (Added Logo for Quickrev)
